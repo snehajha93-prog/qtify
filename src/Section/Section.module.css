@@ -1,0 +1,28 @@
+.section {
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  color: white;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  color: #34c94b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+}
+
+.input {
+  width: 350px;
+  padding: 10px;
+}
+
+.searchBtn {
+  width: 50px;
+  cursor: pointer;
+}
