@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -17,19 +17,27 @@ function Songs() {
   }, []);
 
   const fetchSongs = async () => {
-    const response = await axios.get(
-      "https://qtify-backend.labs.crio.do/songs"
-    );
+    try {
+      const response = await axios.get(
+        "https://qtify-backend.labs.crio.do/songs"
+      );
 
-    setSongs(response.data);
+      setSongs(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const fetchGenres = async () => {
-    const response = await axios.get(
-      "https://qtify-backend.labs.crio.do/genres"
-    );
+    try {
+      const response = await axios.get(
+        "https://qtify-backend.labs.crio.do/genres"
+      );
 
-    setGenres(response.data.data);
+      setGenres(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const filteredSongs =
@@ -41,13 +49,13 @@ function Songs() {
 
   return (
     <div className={styles.section}>
-      <h2>Songs</h2>
+      <h2 className={styles.title}>Songs</h2>
 
       <Tabs
         value={selectedGenre}
-        onChange={(e, value) =>
-          setSelectedGenre(value)
-        }
+        onChange={(event, value) => setSelectedGenre(value)}
+        textColor="inherit"
+        indicatorColor="primary"
       >
         <Tab label="All" value="all" />
 
@@ -67,7 +75,7 @@ function Songs() {
             image={song.image}
             follows={song.likes}
             title={song.title}
-            isSong
+            isSong={true}
           />
         )}
       />

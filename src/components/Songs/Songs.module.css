@@ -1,0 +1,16 @@
+.section {
+  padding: 32px;
+}
+
+.title {
+  color: white;
+  margin-bottom: 16px;
+}
+
+:global(.MuiTab-root) {
+  color: white !important;
+}
+
+:global(.Mui-selected) {
+  color: #34c94b !important;
+}
